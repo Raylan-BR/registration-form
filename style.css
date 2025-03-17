@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*sessões*/
+
+body{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+section:nth-of-type(1){
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section:nth-of-type(2){
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2235a6;
+}
+
+/*formulario de inscrição (sessão da esquerda)*/
+
+.formulario_inscricao{
+    margin: 2rem 0;
+    max-width: 528px;
+}
+
+/*cabeçalho do formulario*/
+
+.formulario_cabecalho{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#retornar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    align-items: center;
+}
+.formulario_cabecalho h1{
+    margin: 1.5rem 0 1rem 0;
+    color: #292524;
+}
+.formulario_cabecalho p{
+    color: #57534E;
+    font-size: 16px;
+}
+
+/*informações do participante*/
+
+.formulario_participante{
+    margin-top: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+.formulario_participante h2{
+    font-size: 16px;
+    color: #292524;
+}
+.formulario_participante div p{
+    color: #57534E;
+    font-size: 14px;
+    margin-bottom: 0.3rem;
+}
+.formulario_participante div input{
+    width: 100%;
+    padding: 12px 16px 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #D6D3D1;
+    color: #292524;
+    font-size: 16px;
+}
+.formulario_participante div select{
+    width: 100%;
+    appearance: none;
+    background-image: url('/img/arrow-down-01.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 24px;
+    padding: 12px 16px 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #D6D3D1;
+    color: #292524;
+    background-color: white;
+    font-size: 16px
+}
+#validar_email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+#validar_email p{
+    margin-top: 3px;
+    color: #DC2626;
+    font-size: 14px;
+}
+#anexar_identidade{
+    display: none;
+}
+.zona_anexo{
+    border: 3px dashed #D6D3D1;
+    width: 100%;
+    height: 188px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8px;
+    cursor: pointer;
+}
+.zona_anexo img{
+    width: 48px;
+}
+.zona_anexo p{
+    width: 163px;
+    text-align: center;
+    color: #8F8881;
+    font-size: 16px;
+}
+/*endereço do usuário*/
+
+.formulario_endereco{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: #57534E;
+    gap: 1.5rem;
+    font-size: 14px;
+    
+}
+.formulario_endereco h2{
+    font-size: 16px;
+    color: #292524;
+}
+.CEP input{
+    width: 100%;
+    padding: 12px 16px 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #D6D3D1;
+    color: #292524;
+    font-size: 16px;
+}
+.formulario_endereco .rua_numero, .cidade_estado{
+    display: flex;
+    justify-content: space-between;
+}
+.formulario_endereco .rua input, .cidade input{
+    width: 332px; /*na responsividade, devemos diminuir esse valor fixo*/
+    padding: 12px 16px 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #D6D3D1;
+    color: #292524;
+    font-size: 16px;
+}
+.formulario_endereco .numero input, .estado input{
+    width: 176px; /*na responsividade, devemos diminuir esse valor fixo*/
+    padding: 12px 16px 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #D6D3D1;
+    color: #292524;
+    font-size: 16px;
+}
+.formulario_endereco .CEP, .rua, .numero, .cidade, .estado{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+#anexar_comprovante{
+    display: none;
+}
+/*Trilhas de aprendizagem*/
+
+.formulario_trilhas{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.formulario_trilhas input[type="radio"]{
+    display: none;
+}
+input[type="radio"]:checked + label {
+    border-color: #F3541C;
+}
+input[type="radio"]:checked + label #checkbox_trilha{
+    background-color: #F3541C;
+    border-color: #F3541C;
+}
+.formulario_trilhas h2{
+    font-size: 16px;
+    color: #292524;
+    margin-bottom: 0.8rem;
+}
+.formulario_trilhas p{
+    color: #57534E;
+    font-size: 14px;
+}
+.formulario_trilhas .opcao_trilha{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.formulario_trilhas .trilha{
+    width: 252px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #D6D3D1;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#checkbox_trilha{
+    border: 2px solid #D6D3D1;
+    color: white;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+.formulario_trilhas .conteudo_trilha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Termos e politica de privacidade*/
+.formulario_termos{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    color: #57534E;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 2rem;
+}
+.formulario_termos input{
+    display: none;
+}
+#checkbox_termos{
+    border: 2px solid #D6D3D1;
+    color: white;
+    width: 19px;
+    height: 19px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked + label #checkbox_termos{
+    background-color: #F3541C;
+    border-color: #F3541C;
+}
+.formulario_termos a{
+    text-decoration: none;
+    color: #E43A12;
+}
+/*Finalizar inscrição*/
+
+.formulario_finalizar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+#butao_cancelar{
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid #E43A12;
+    border-radius: 8px;
+    background-color: white;
+    color: #E43A12;
+    font-weight: 500;
+}
+#butao_finalizar{
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #E43A12;
+    color: white;
+    font-weight: 500;
+}
+
+/*Responsividade*/
+
+@media (max-width: 656px){
+    /*Definindo a sessão 1 para preencher 100% da tela*/
+    section:nth-of-type(1){
+        width: 100%;
+        height: 100%;
+    }
+    /*Ocultando a imagem do layout caso esteja em um dispositivo movel*/
+    section:nth-of-type(2){
+        display: none;
+    }
+    /*Definindo o formulario para 100% da tela*/
+    .formulario_inscricao{
+        padding: 1rem;
+        width: 100%;
+    }
+    /*Colocando os input's em coluna*/
+    .formulario_endereco .rua_numero, .cidade_estado{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    /*Definindo o tamanho do input para 100% da tela*/
+    .formulario_endereco .rua input, .cidade input{
+        width: 100%;
+    }
+    .formulario_endereco .numero input, .estado input{
+        width: 100%;
+    }
+    /*Centralizando as opções da trilha*/
+    .formulario_trilhas .opcao_trilha{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    /*Centralizando os botões*/
+    .formulario_finalizar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    /*Centralizando todos os subtitulos*/
+    h2{
+        text-align: center;
+    }
+}
