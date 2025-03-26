@@ -34,7 +34,7 @@ section:nth-of-type(2){
 /*formulario de inscrição (sessão da esquerda)*/
 
 .formulario_inscricao{
-    margin: 2rem 0;
+    margin: 50px 0;
     max-width: 528px;
 }
 
@@ -252,6 +252,31 @@ input[type="radio"]:checked + label #checkbox_trilha{
     flex-direction: column;
     align-items: center;
 }
+.formulario_dados_login{
+    margin-top: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+.formulario_dados_login h2{
+    font-size: 16px;
+    color: #292524;
+}
+.formulario_dados_login p{
+    color: #57534E;
+    font-size: 14px;
+    margin-bottom: 0.3rem;
+}
+.formulario_dados_login input{
+    width: 100%;
+    padding: 12px 16px 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #D6D3D1;
+    color: #292524;
+    font-size: 16px;
+}
 /*Termos e politica de privacidade*/
 .formulario_termos{
     display: flex;
@@ -317,10 +342,10 @@ input[type="checkbox"]:checked + label #checkbox_termos{
 
 /*Responsividade*/
 
-@media (max-width: 656px){
+@media (max-width: 1000px){
     /*Definindo a sessão 1 para preencher 100% da tela*/
     section:nth-of-type(1){
-        width: 100%;
+        width: 100vw;
         height: 100%;
     }
     /*Ocultando a imagem do layout caso esteja em um dispositivo movel*/
