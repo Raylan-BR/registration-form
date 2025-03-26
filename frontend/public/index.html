@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de inscrição</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <!-- Sessão da esquerda -->
+    <section>
+        <div class="formulario_inscricao">
+            <div class="formulario_cabecalho">
+                <div id="retornar">
+                    <img src="../image/arrow-left-02.svg" alt="seta voltar">
+                    <p>Voltar</p>
+                </div>
+                <h1>Formulário de inscrição</h1>
+                <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+            </div>
+            <div class="formulario_participante">
+                <h2>Informações do participante</h2>
+                <!-- informações do participante -->
+                <div>
+                    <p>Nome completo</p>
+                    <input type="text">
+                </div>
+                <div>
+                    <p>Data de nascimento</p>
+                    <input type="date">
+                </div>
+                <div>
+                    <p>CPF</p>
+                    <input type="text">
+                </div>
+                <div>
+                    <p>Sexo</p>
+                    <select name="sexo" id="sexo">
+                        <option value="Selecionar">Selecionar</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Prefiro não dizer">Prefiro não dizer</option>
+                    </select>
+                </div>
+                <div>
+                    <p>E-mail</p>
+                    <input type="email">
+                    <div id="validar_email">
+                        <!--Esse icone não encontramos no figma e usamos o icone do heroicons-->
+                        <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                          </svg>                   
+                        <p>Insira um e-mail válido</p>
+                    </div>
+                </div>
+                <div>
+                    <p>Telefone</p>
+                    <input type="tel">
+                </div>
+                <div>
+                    <p>Documento de identidade</p>
+                    <label for="anexar_identidade">
+                        <div class="zona_anexo">
+                            <img src="../image/cloud-upload.svg" alt="Icone upload de arquivo">
+                            <p>Clique aqui para selecionar o arquivo</p>
+                        </div>
+                        <input type="file" id="anexar_identidade">
+                    </label>
+                </div>
+            </div>
+            <div class="formulario_endereco">
+                <h2>Endereço residêncial</h2>
+                <div class="CEP">
+                    <p>CEP</p>
+                    <input type="text">
+                </div>
+                <div class="rua_numero">
+                    <div class="rua">
+                        <p>Rua</p>
+                        <input type="text">
+                    </div>
+                    <div class="numero">
+                        <p>Número</p>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="cidade_estado">
+                    <div class="cidade">
+                        <p>Cidade</p>
+                        <input type="text">
+                    </div>
+                    <div class="estado">
+                        <p>Estado</p>
+                        <input type="text">
+                    </div>
+                </div>
+                <div>
+                    <p>Comprovante de residência</p>
+                    <label for="anexar_comprovante">
+                        <div class="zona_anexo">
+                            <img src="../image/cloud-upload.svg" alt="Icone upload de arquivo">
+                            <p>Clique aqui para selecionar o arquivo</p>
+                        </div>
+                        <input type="file" id="anexar_comprovante">
+                    </label>
+                </div>
+            </div>
+            <div class="formulario_trilhas">
+                <h2>Trilhas de aprendizagem</h2>
+                <p>Selecione apenas uma trilha</p>
+                <div class="opcao_trilha">
+                    <!-- Programação Front-end -->
+                    <input type="radio" id="front_end" name="trilha">
+                    <label for="front_end" class="trilha">
+                        <div id="checkbox_trilha">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                              </svg>                              
+                        </div>
+                        <div class="conteudo_trilha">
+                            <img src="../image/front-end.svg" alt="icone para a trilha de front end">
+                            <p>Programação Front-end</p>
+                        </div>
+                    </label>
+
+                    <!-- Programação Back-end -->
+                    <input type="radio" id="back_end" name="trilha">
+                    <label for="back_end" class="trilha">
+                        <div id="checkbox_trilha">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                              </svg>                              
+                        </div>
+                        <div class="conteudo_trilha">
+                            <img src="../image/front-end.svg" alt="icone para a trilha de front end">
+                            <p>Programação Back-end</p>
+                        </div>
+                    </label>
+
+                    <!-- Programação de Jogos -->
+                    <input type="radio" id="jogos" name="trilha">
+                    <label for="jogos" class="trilha">
+                        <div id="checkbox_trilha">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                              </svg>                              
+                        </div>
+                        <div class="conteudo_trilha">
+                            <img src="../image/front-end.svg" alt="icone para a trilha de front end">
+                            <p>Programação de Jogos</p>
+                        </div>
+                    </label>
+
+                    <!-- Design e Experiência -->
+                    <input type="radio" id="deisgn_experiencia" name="trilha">
+                    <label for="deisgn_experiencia" class="trilha">
+                        <div id="checkbox_trilha">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                              </svg>                              
+                        </div>
+                        <div class="conteudo_trilha">
+                            <img src="../image/front-end.svg" alt="icone para a trilha de front end">
+                            <p>Design e Experiência</p>
+                        </div>
+                    </label>
+
+                    <!-- Ciência de Dados -->
+                    <input type="radio" id="ciencia_dados" name="trilha">
+                    <label for="ciencia_dados" class="trilha">
+                        <div id="checkbox_trilha">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                              </svg>                              
+                        </div>
+                        <div class="conteudo_trilha">
+                            <img src="../image/front-end.svg" alt="icone para a trilha de front end">
+                            <p>Ciência de Dados</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="formulario_dados_login">
+                <h2>Informações de login</h2>
+                <div class="usuario">
+                    <p>Nome de usuário</p>
+                    <input type="text">
+                </div>
+                <div class="senha">
+                    <p>Senha</p>
+                    <input type="password">
+                </div>
+            </div>
+            <div class="formulario_termos">
+                <input type="checkbox" id="confirmar_termos">
+                <label for="confirmar_termos">
+                    <div id="checkbox_termos">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg>                              
+                    </div>
+                </label>
+                <p>Declaro que li e concordo com os <a href="#">Termos e Condições</a> e com a <a href="#">Política de Privacidade.</a> </p>
+            </div>
+            <div class="formulario_finalizar">
+                <button id="butao_cancelar">Cancelar</button>
+                <button id="butao_finalizar">Fazer inscrição</button>
+            </div>
+        </div>
+    </section>
+    <!-- Sessão da direita -->
+    <section>
+        <div class="garoto_sentado">
+            <img width="500px" src="../image/garoto_sentado.png" alt="">
+        </div>
+        <div class="rodape">
+            <img width="200px" src="../image/rodape.png" alt="">
+        </div>
+    </section>
+</body>
+</html>
