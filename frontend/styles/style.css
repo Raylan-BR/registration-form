@@ -46,12 +46,22 @@ section:nth-of-type(2){
     flex-direction: column;
 }
 #retornar{
+    width: min-content;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     gap: 0.5rem;
     cursor: pointer;
     align-items: center;
+}
+#retornar:hover{
+    background-color: #f3f3f3;
+}
+.icone_login{
+    width: 19px;
+    height: 19px;
 }
 .formulario_cabecalho h1{
     margin: 1.5rem 0 1rem 0;
@@ -354,6 +364,7 @@ input[type="checkbox"]:checked + label #checkbox_termos{
     }
     /*Definindo o formulario para 100% da tela*/
     .formulario_inscricao{
+        margin: 10px 0;
         padding: 1rem;
         width: 100%;
     }

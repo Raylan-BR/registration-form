@@ -11,9 +11,13 @@
     <section>
         <div class="formulario_inscricao">
             <div class="formulario_cabecalho">
-                <div id="retornar">
-                    <img src="../image/arrow-left-02.svg" alt="seta voltar">
-                    <p>Voltar</p>
+                <div id="retornar" onclick="retornar_pagina_login()">
+                    <div class="icone_login">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                          </svg>                          
+                    </div>
+                    <p>Login</p>
                 </div>
                 <h1>Formulário de inscrição</h1>
                 <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
@@ -200,7 +204,7 @@
                           </svg>                              
                     </div>
                 </label>
-                <p>Declaro que li e concordo com os <a href="#">Termos e Condições</a> e com a <a href="#">Política de Privacidade.</a> </p>
+                <p>Declaro que li e concordo com os <a href="termos_condicoes.html">Termos e Condições</a> e com a <a href="politica_privacidade.html">Política de Privacidade.</a> </p>
             </div>
             <div class="formulario_finalizar">
                 <button id="butao_cancelar">Cancelar</button>
@@ -217,5 +221,6 @@
             <img width="200px" src="../image/rodape.png" alt="">
         </div>
     </section>
+    <script src="../js/script.js"></script>
 </body>
 </html>
