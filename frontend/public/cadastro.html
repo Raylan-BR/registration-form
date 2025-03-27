@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/cadastro.css">
     <title>Login</title>
 </head>
 <body>
-    <div class="tela_login">
-        <h1>Faça seu login por aqui!</h1>
+    <div class="tela_cadastro">
+        <h1>Faça seu cadastro aqui!</h1>
+        <div class="nome">
+            <p>Seu nome completo</p>
+            <input type="text">
+        </div>
         <div class="usuario">
             <p>Nome de usuário</p>
             <input type="text">
@@ -18,13 +23,12 @@
             <input type="password">
         </div>
         <div class="finalizar">
-            <button id="Entrar" onclick="ir_tela_formulario()">Entrar</button>
+            <button id="inscrever" onclick="ir_tela_login()">inscrever-se</button>
         </div>
-        <p>Inscreva-se <a href="cadastro.html">aqui</a></p>
     </div>
     <footer>
         <img src="../image/rodape.png" alt="trilhas inova maranhão rodapé">
     </footer>
-    <script src="../js/login.js"></script>
+    <script src="../js/cadastro.js"></script>
 </body>
 </html>
