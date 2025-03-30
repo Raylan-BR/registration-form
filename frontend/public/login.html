@@ -11,11 +11,17 @@
         <h1>Faça seu login por aqui!</h1>
         <div class="usuario">
             <p>Nome de usuário</p>
-            <input type="text">
+            <input type="text" id="nome_usuario" placeholder="Nome visível para a comunidade">
         </div>
         <div class="senha">
             <p>Senha</p>
-            <input type="password">
+            <input type="password" id="senha" placeholder="Senha com 8 caracteres">
+        </div>
+        <div id="validar_login">
+            <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+              </svg>                   
+            <p id="texto_login">texto</p>
         </div>
         <div class="finalizar">
             <button id="Entrar" onclick="ir_tela_formulario()">Entrar</button>

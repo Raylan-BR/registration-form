@@ -15,7 +15,7 @@ function ir_tela_login(){
         }
         else{
             localStorage.setItem(nome_usuario, senha);
-            console.log(nome_usuario," salvo no localStorage");
+            console.log(`cadastro: ${nome_usuario} salvo no localStorage`);
 
             window.location.href = "../public/login.html";
         }

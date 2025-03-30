@@ -52,8 +52,22 @@ body{
     align-items: center;
     width: 100%;
 }
-.tela_login div:nth-of-type(3){
+.tela_login div:nth-of-type(4){
     align-items: end;
+}
+#validar_login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+#validar_login p{
+    margin-top: 3px;
+    color: #DC2626;
+    font-size: 14px;
 }
 #Entrar{
     padding: 0.5rem 3rem;
