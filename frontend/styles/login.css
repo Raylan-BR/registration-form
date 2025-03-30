@@ -67,7 +67,7 @@ body{
     margin-right: 2rem;
     margin-top: 3rem;
 }
-footer{
+.imagem_rodape{
     margin-top: 2rem;
 }
 @media (max-width: 600px){

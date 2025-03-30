@@ -55,6 +55,21 @@ body{
 .tela_cadastro div:nth-of-type(4){
     align-items: end;
 }
+#validar_campos_cadastro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    opacity: 0;
+    /*efeito de transição para esse campo de validação*/
+    transition: opacity 0.2s ease;
+}
+#validar_campos_cadastro p{
+    margin-top: 3px;
+    color: #DC2626;
+    font-size: 14px;
+}
 #inscrever{
     padding: 0.5rem 2rem;
     cursor: pointer;

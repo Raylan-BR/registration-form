@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/login.css">
     <link rel="stylesheet" href="../styles/cadastro.css">
-    <title>Login</title>
+    <title>Cadastre-se</title>
 </head>
 <body>
     <div class="tela_cadastro">
         <h1>Faça seu cadastro aqui!</h1>
-        <div class="nome">
-            <p>Seu nome completo</p>
-            <input type="text">
-        </div>
         <div class="usuario">
             <p>Nome de usuário</p>
-            <input type="text">
+            <input type="text" id="nome_usuario" placeholder="Nome visível para a comunidade">
         </div>
         <div class="senha">
             <p>Senha</p>
-            <input type="password">
+            <input type="password" id="senha" placeholder="Senha com 8 caracteres">
+        </div>
+        <div id="validar_campos_cadastro">
+            <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+              </svg>                   
+            <p>Preencha os campos vazios</p>
         </div>
         <div class="finalizar">
-            <button id="inscrever" onclick="ir_tela_login()">inscrever-se</button>
+            <button id="inscrever" onclick="ir_tela_login()">Salvar</button>
         </div>
     </div>
     <footer>
