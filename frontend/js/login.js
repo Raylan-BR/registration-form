@@ -1,6 +1,4 @@
 // Precisamos recuperar do localStorage, os usuarios e senhas
-
-
 //lista de usuarios para validar o login
 let lista_usuarios = [];
 
@@ -30,24 +28,15 @@ function ver_lista(lista){
         console.log("Nenhum usuário foi carregado!");
     }
 }
-function pesquisarUsuario(nome, senha, lista){
-    let verificador = 0;
+function pesquisarUsuario(nome, lista){
+    let referencia = -1;
     for(let i=0;i<lista.length;i++){
         if(lista[i].nome_usuario == nome){
-            if(lista[i].senha == senha){
-                verificador = 1;
-                console.log("usuario existe!");
-                break;
-            }
-            else{
-                console.log("senha incorreta!");
-            }
+            referencia = i;
+            break;
         }
     }
-    if(verificador == 0){
-        console.log("usuario não existe!");
-    }
-    return verificador;
+    return referencia;
 }
 //chamando a função para carregar lista de usuarios
 carregar_lista(lista_usuarios);
@@ -59,29 +48,39 @@ function ir_tela_formulario(){
     var nome_usuario = document.getElementById("nome_usuario").value;
     var senha = document.getElementById("senha").value;
     var validar_login_aviso = document.getElementById("validar_login");
+    var validar_login_texto = document.getElementById("texto_login");
 
-    //validar os campos
+    //validar o usuario
     if(nome_usuario ==""){
         console.log("campo de nome vazio!");
         //validar input do nome de usuario
-        document.getElementById("texto_login").innerText = "Por favor, insira seu nome!";
-        validar_login_aviso.style.opacity = 1;
-    }
-    else if(senha == ""){
-        console.log("campo de senha vazio!");
-        //validar input da senha
-        document.getElementById("texto_login").innerText = "Por favor, insira sua senha";
+        validar_login_texto.innerText = "Por favor, insira seu nome!";
         validar_login_aviso.style.opacity = 1;
     }
     else{
-        if(pesquisarUsuario(nome_usuario, senha, lista_usuarios)){
-            console.log("conseguimos encontrar seu nome de usuario!");
-            window.location.href = "formulario.html";
+        let referencia = pesquisarUsuario(nome_usuario, lista_usuarios);
+        if(referencia == -1){
+            validar_login_texto.innerText = "Nome não existe!";
+            validar_login_aviso.style.opacity = 1;
         }
         else{
-            document.getElementById("texto_login").innerText = "Nenhum usuário encontrado!";
-            validar_login_aviso.style.opacity = 1;
-            console.log("não conseguimos encontrar seu nome de usuario!");
+            if(senha == ""){
+                console.log("campo de senha vazio!");
+                //validar input da senha
+                validar_login_texto.innerText = "Por favor, insira sua senha";
+                validar_login_aviso.style.opacity = 1;
+            }
+            else{
+                let referencia = pesquisarUsuario(nome_usuario, lista_usuarios);
+                if(lista_usuarios[referencia].senha != senha){
+                    validar_login_texto.innerText = "Senha incorreta!";
+                    validar_login_aviso.style.opacity = 1;
+                }
+                else{
+                    console.log("conseguimos encontrar seu nome de usuario!");
+                    location.href = "formulario.html";
+                }
+            }
         }
     }
 }
