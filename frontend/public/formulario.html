@@ -66,7 +66,7 @@
                     <label for="anexar_identidade">
                         <div class="zona_anexo">
                             <img src="../image/cloud-upload.svg" alt="Icone upload de arquivo">
-                            <p id="confirmar_anexo_texto">Clique aqui para selecionar o arquivo</p>
+                            <p id="confirmar_anexo_texto_identidade">Clique aqui para selecionar o arquivo</p>
                         </div>
                         <input type="file" id="anexar_identidade">
                     </label>
@@ -76,26 +76,32 @@
                 <h2>Endereço residêncial</h2>
                 <div class="CEP">
                     <p>CEP</p>
-                    <input type="text">
+                    <input type="text" id="entrada_cep" maxlength="9" placeholder="00000-000">
+                    <div id="validar_endereco">
+                        <!--Esse icone não encontramos no figma e usamos o icone do heroicons-->
+                        <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                          </svg>                   
+                        <p>CEP inválido</p>
                 </div>
                 <div class="rua_numero">
                     <div class="rua">
                         <p>Rua</p>
-                        <input type="text">
+                        <input type="text" id="entrada_rua">
                     </div>
                     <div class="numero">
                         <p>Número</p>
-                        <input type="text">
+                        <input type="text" id="entrada_numero">
                     </div>
                 </div>
                 <div class="cidade_estado">
                     <div class="cidade">
                         <p>Cidade</p>
-                        <input type="text">
+                        <input type="text" id="entrada_cidade">
                     </div>
                     <div class="estado">
                         <p>Estado</p>
-                        <input type="text">
+                        <input type="text" id="entrada_estado">
                     </div>
                 </div>
                 <div>
@@ -103,7 +109,7 @@
                     <label for="anexar_comprovante">
                         <div class="zona_anexo">
                             <img src="../image/cloud-upload.svg" alt="Icone upload de arquivo">
-                            <p>Clique aqui para selecionar o arquivo</p>
+                            <p id="confirmar_anexo_texto_endereco">Clique aqui para selecionar o arquivo</p>
                         </div>
                         <input type="file" id="anexar_comprovante">
                     </label>
