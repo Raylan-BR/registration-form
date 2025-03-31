@@ -21,14 +21,14 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
     gap: 1rem;
     border-radius: 6px;
 }
 .tela_login h1{
     color: #292524;
     font-size: 20pt;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 .tela_login p{
     width: 80%;

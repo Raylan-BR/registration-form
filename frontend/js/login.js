@@ -17,17 +17,6 @@ function carregar_lista(lista){
         console.log("Lista carregada!");
     }
 }
-//função responsável por mostrar no console a lista de usuarios
-function ver_lista(lista){
-    if(lista.length > 0){
-        for(let i=0; i < lista.length; i++){
-            console.log(lista[i].nome_usuario);
-        }
-    }
-    else{
-        console.log("Nenhum usuário foi carregado!");
-    }
-}
 function pesquisarUsuario(nome, lista){
     let referencia = -1;
     for(let i=0;i<lista.length;i++){
@@ -40,7 +29,6 @@ function pesquisarUsuario(nome, lista){
 }
 //chamando a função para carregar lista de usuarios
 carregar_lista(lista_usuarios);
-ver_lista(lista_usuarios);
 /*Aqui é importante saber que será uma das funções mais importantes.
  Ela não só irá levar o usuario para a tela do formulário, mas irá validar as informações de usuario como
  nome de usuario e senha  */
