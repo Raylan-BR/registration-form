@@ -112,13 +112,16 @@ section:nth-of-type(2){
     border: 1px solid #D6D3D1;
     color: #292524;
     background-color: white;
-    font-size: 16px
+    font-size: 16px;
+    cursor: pointer;
 }
 #validar_email{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 #validar_email p{
     margin-top: 3px;
@@ -147,6 +150,7 @@ section:nth-of-type(2){
     text-align: center;
     color: #8F8881;
     font-size: 16px;
+    word-wrap: break-word;
 }
 /*endereço do usuário*/
 

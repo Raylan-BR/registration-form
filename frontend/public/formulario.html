@@ -27,7 +27,7 @@
                 <!-- informações do participante -->
                 <div>
                     <p>Nome completo</p>
-                    <input type="text">
+                    <input type="text" id="entrada_nome" placeholder="Digite seu nome aqui">
                 </div>
                 <div>
                     <p>Data de nascimento</p>
@@ -35,7 +35,7 @@
                 </div>
                 <div>
                     <p>CPF</p>
-                    <input type="text">
+                    <input type="text" maxlength="14" id="entrada_cpf" placeholder="000.000.000-00">
                 </div>
                 <div>
                     <p>Sexo</p>
@@ -48,7 +48,7 @@
                 </div>
                 <div>
                     <p>E-mail</p>
-                    <input type="email">
+                    <input type="email" id="entrada_email">
                     <div id="validar_email">
                         <!--Esse icone não encontramos no figma e usamos o icone do heroicons-->
                         <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -59,14 +59,14 @@
                 </div>
                 <div>
                     <p>Telefone</p>
-                    <input type="tel">
+                    <input type="tel" id="entrada_telefone" maxlength="16" placeholder="(00) 0 0000-0000">
                 </div>
                 <div>
                     <p>Documento de identidade</p>
                     <label for="anexar_identidade">
                         <div class="zona_anexo">
                             <img src="../image/cloud-upload.svg" alt="Icone upload de arquivo">
-                            <p>Clique aqui para selecionar o arquivo</p>
+                            <p id="confirmar_anexo_texto">Clique aqui para selecionar o arquivo</p>
                         </div>
                         <input type="file" id="anexar_identidade">
                     </label>
