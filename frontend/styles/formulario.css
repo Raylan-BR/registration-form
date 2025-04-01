@@ -79,11 +79,14 @@ section:nth-of-type(2){
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.7rem;
+}
+#conteudo_nome{
+    margin-bottom: 1.7rem;;
 }
 .formulario_participante h2{
     font-size: 16px;
     color: #292524;
+    margin-bottom: 1.7rem;
 }
 .formulario_participante div p{
     color: #57534E;
@@ -114,19 +117,20 @@ section:nth-of-type(2){
     background-color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 1.7rem;
 }
-#validar_email, #validar_endereco{
+#validar_email, #validar_endereco, #validar_data, #validar_cpf, #validar_telefone{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
     opacity: 0;
     transition: opacity 0.2s ease;
 }
-#validar_email p, #validar_endereco p{
+#validar_email p, #validar_endereco p, #validar_data p, #validar_cpf p, #validar_telefone p{
     margin-top: 3px;
     color: #DC2626;
     font-size: 14px;
+    margin-left: 3px;
 }
 #anexar_identidade{
     display: none;

@@ -10,6 +10,21 @@ document.querySelector("#entrada_nome").addEventListener('input', function(event
         .toUpperCase() // deixando tudo maiusculo
     event.target.value = nome;
 });
+//validação da data de nascimento
+//auto formatação de 00/00/0000
+document.querySelector("#entrada_data").addEventListener("input", function(event){
+    let data = event.target.value;
+    data = data.replace(/\D/g,"");
+    data = data.replace(/(\d{2})(\d{2})(\d{4})/,"$1/$2/$3");
+
+    event.target.value = data;
+
+    if(data.length != 10){
+        document.querySelector("#validar_data").style.opacity = 1;
+    }     else{
+        document.querySelector("#validar_data").style.opacity = 0;
+    }
+});
 //validação do cpf
 //auto formatação de 000.000.000-00
 document.querySelector("#entrada_cpf").addEventListener('input', function(event){
@@ -20,6 +35,12 @@ document.querySelector("#entrada_cpf").addEventListener('input', function(event)
     cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,"$1.$2.$3-$4");
     //colocando o formato dentro do input
     event.target.value = cpf;
+
+    if(cpf.length != 14){
+        document.querySelector("#validar_cpf").style.opacity = 1;
+    }     else{
+        document.querySelector("#validar_cpf").style.opacity = 0;
+    }
 });
 //validação do email
 document.querySelector("#entrada_email").addEventListener("input", function(event){
@@ -40,6 +61,12 @@ document.querySelector("#entrada_telefone").addEventListener("input",function(ev
     telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/,"($1) $2 $3-$4");
 
     event.target.value = telefone;
+
+    if(telefone.length != 16){
+        document.querySelector("#validar_telefone").style.opacity = 1;
+    }     else{
+        document.querySelector("#validar_telefone").style.opacity = 0;
+    }
 });
 //validação ao anexar a identidade
 
@@ -115,7 +142,6 @@ document.querySelector("#butao_finalizar").addEventListener("mouseenter",functio
 });
 
 //validando todos os inputs antes de finalizar o formulário
-
 const formulario_inscricao = document.querySelector(".formulario_inscricao");
 
 document.querySelector("#butao_finalizar").addEventListener("click", function(event){
@@ -178,9 +204,12 @@ function campoVazio(conteudo_pai){
 //resetando todos os inputs
 
 document.querySelector("#butao_cancelar").addEventListener("click", function(event){
-    let lista_inputs = formulario.querySelectorAll("input");
+    let lista_inputs = formulario_inscricao.querySelectorAll("input");
 
     lista_inputs.forEach(function(input){
         input.value = "";
+        if(input.type == "radio" || input.type == "checkbox"){
+            input.checked = false;
+        }
     });
 });
