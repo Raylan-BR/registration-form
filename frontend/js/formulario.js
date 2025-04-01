@@ -101,3 +101,86 @@ function buscarEndereco(event){
 //validação ao anexar o comprovante de residencia
 
 validar_anexo("anexar_comprovante", "confirmar_anexo_texto_endereco");
+
+//colocando o icone não-permitido no cursor 
+let confirmar_termos = document.querySelector("#confirmar_termos");
+document.querySelector("#butao_finalizar").addEventListener("mouseenter",function(event){
+   
+    if(!confirmar_termos.checked){
+        event.target.style.cursor = "not-allowed";
+    }
+    else {
+        event.target.style.cursor = "pointer";
+    }
+});
+
+//validando todos os inputs antes de finalizar o formulário
+
+const formulario_inscricao = document.querySelector(".formulario_inscricao");
+
+document.querySelector("#butao_finalizar").addEventListener("click", function(event){
+    if(confirmar_termos.checked){
+        campoVazio(formulario_inscricao);
+    } else{
+        console.log("aceite os termos!");
+    }
+});
+function campoVazio(conteudo_pai){
+    //percorrer os inputs das informações do participante
+    let formulario_participante = conteudo_pai.querySelector(".formulario_participante");
+    lista = formulario_participante.querySelectorAll("input");
+
+    for(let i = 0; i < lista.length; i++){
+        let input = lista[i];
+        if(input.value.trim() == ""){
+            input.style.border = "1px solid #E43A12";
+            alert(`Insira um(a) ${input.name}`);
+            return;
+        }
+        else{
+            input.style.border = "1px solid #D6D3D1";
+        }
+    }
+    console.log("percorreu informações do participante");
+    //percorrer os inputs das informações de endereço
+    let formulario_endereco = conteudo_pai.querySelector(".formulario_endereco");
+    lista = formulario_endereco.querySelectorAll("input");
+
+    for(let i = 0; i < lista.length; i++){
+        let input = lista[i];
+        if(input.value.trim() == ""){
+            input.style.border = "1px solid #E43A12";
+            alert(`Insira um(a) ${input.name}`);
+            return;
+        }
+        else{
+            input.style.border = "1px solid #D6D3D1";
+        }
+    }
+    console.log("percorreu informações de endereço");
+    //percorrer as opções de trilha
+    let formulario_trilhas = formulario_inscricao.querySelector(".formulario_trilhas");
+    lista = formulario_trilhas.querySelectorAll("input");
+
+    let checado = false;
+    for(let i = 0; i < lista.length; i++){
+        if(lista[i].checked){
+            checado = true;
+        }
+    }
+    if(!checado){
+        alert("Selecione uma trilha!");
+        return;
+    }
+    console.log("percorreu opções da trilha");
+    alert("Sua inscrição foi feita com sucesso!");
+}
+//resetando todos os inputs
+
+document.querySelector("#butao_cancelar").addEventListener("click", function(event){
+    let lista_inputs = formulario.querySelectorAll("input");
+
+    lista_inputs.forEach(function(input){
+        input.value = "";
+    });
+});

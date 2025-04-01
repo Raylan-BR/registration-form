@@ -27,20 +27,20 @@
                 <!-- informações do participante -->
                 <div>
                     <p>Nome completo</p>
-                    <input type="text" id="entrada_nome" placeholder="Digite seu nome aqui">
+                    <input name="nome" type="text" id="entrada_nome" placeholder="Digite seu nome aqui">
                 </div>
                 <div>
                     <p>Data de nascimento</p>
-                    <input type="date">
+                    <input name="data" type="date">
                 </div>
                 <div>
                     <p>CPF</p>
-                    <input type="text" maxlength="14" id="entrada_cpf" placeholder="000.000.000-00">
+                    <input name="CPF" type="text" maxlength="14" id="entrada_cpf" placeholder="000.000.000-00">
                 </div>
                 <div>
                     <p>Sexo</p>
                     <select name="sexo" id="sexo">
-                        <option value="Selecionar">Selecionar</option>
+                        <option value="Selecionar" selected>Selecionar</option>
                         <option value="Feminino">Feminino</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Prefiro não dizer">Prefiro não dizer</option>
@@ -48,18 +48,18 @@
                 </div>
                 <div>
                     <p>E-mail</p>
-                    <input type="email" id="entrada_email">
+                    <input name="email" type="email" id="entrada_email" placeholder="exemplo@gmail.com">
                     <div id="validar_email">
                         <!--Esse icone não encontramos no figma e usamos o icone do heroicons-->
                         <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                          </svg>                   
+                        </svg>                   
                         <p>Insira um e-mail válido</p>
                     </div>
                 </div>
                 <div>
                     <p>Telefone</p>
-                    <input type="tel" id="entrada_telefone" maxlength="16" placeholder="(00) 0 0000-0000">
+                    <input name="telefone" type="tel" id="entrada_telefone" maxlength="16" placeholder="(00) 0 0000-0000">
                 </div>
                 <div>
                     <p>Documento de identidade</p>
@@ -68,7 +68,7 @@
                             <img src="../image/cloud-upload.svg" alt="Icone upload de arquivo">
                             <p id="confirmar_anexo_texto_identidade">Clique aqui para selecionar o arquivo</p>
                         </div>
-                        <input type="file" id="anexar_identidade">
+                        <input name="documento de identidade" type="file" id="anexar_identidade">
                     </label>
                 </div>
             </div>
@@ -76,34 +76,35 @@
                 <h2>Endereço residêncial</h2>
                 <div class="CEP">
                     <p>CEP</p>
-                    <input type="text" id="entrada_cep" maxlength="9" placeholder="00000-000">
+                    <input name="CEP" type="text" id="entrada_cep" maxlength="9" placeholder="00000-000">
                     <div id="validar_endereco">
                         <!--Esse icone não encontramos no figma e usamos o icone do heroicons-->
                         <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                           </svg>                   
                         <p>CEP inválido</p>
+                    </div>
                 </div>
                 <div class="rua_numero">
                     <div class="rua">
                         <p>Rua</p>
-                        <input type="text" id="entrada_rua">
+                        <input name="rua" type="text" id="entrada_rua">
                     </div>
                     <div class="numero">
                         <p>Número</p>
-                        <input type="text" id="entrada_numero">
+                        <input name="número" type="text" id="entrada_numero">
                     </div>
                 </div>
                 <div class="cidade_estado">
                     <div class="cidade">
                         <p>Cidade</p>
-                        <input type="text" id="entrada_cidade">
-                    </div>
-                    <div class="estado">
-                        <p>Estado</p>
-                        <input type="text" id="entrada_estado">
+                        <input name="cidade" type="text" id="entrada_cidade">
                     </div>
                 </div>
+                    <div class="estado">
+                        <p>Estado</p>
+                        <input name="estado" type="text" id="entrada_estado">
+                    </div>
                 <div>
                     <p>Comprovante de residência</p>
                     <label for="anexar_comprovante">
@@ -111,7 +112,7 @@
                             <img src="../image/cloud-upload.svg" alt="Icone upload de arquivo">
                             <p id="confirmar_anexo_texto_endereco">Clique aqui para selecionar o arquivo</p>
                         </div>
-                        <input type="file" id="anexar_comprovante">
+                        <input name="comprovante de residencia" type="file" id="anexar_comprovante">
                     </label>
                 </div>
             </div>
