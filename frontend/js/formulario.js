@@ -1,3 +1,4 @@
+//Essa função faz o logout
 function ir_tela_login(){
     window.location.href = "login.html";
 }
@@ -72,6 +73,7 @@ document.querySelector("#entrada_telefone").addEventListener("input",function(ev
 
 /*Nessa função é possivel controlar o fluxo de funcionamento 
 dos inputs files atraves do id e do parágrafo para confirmação*/
+//fizemos essa função, pois usaremos ela novamente para o anexo do comprovante de residencia
 function validar_anexo(identificador, texto_visual){
     document.querySelector(`#${identificador}`).addEventListener("change", function(event){
         let identidade = event.target.files[0];
@@ -126,7 +128,6 @@ function buscarEndereco(event){
 
 }
 //validação ao anexar o comprovante de residencia
-
 validar_anexo("anexar_comprovante", "confirmar_anexo_texto_endereco");
 
 //colocando o icone não-permitido no cursor 
@@ -146,63 +147,54 @@ const formulario_inscricao = document.querySelector(".formulario_inscricao");
 
 document.querySelector("#butao_finalizar").addEventListener("click", function(event){
     if(confirmar_termos.checked){
-        campoVazio(formulario_inscricao);
+        verificar_inputs(formulario_inscricao);
     } else{
         console.log("aceite os termos!");
     }
 });
-function campoVazio(conteudo_pai){
-    //percorrer os inputs das informações do participante
-    let formulario_participante = conteudo_pai.querySelector(".formulario_participante");
-    lista = formulario_participante.querySelectorAll("input");
-
-    for(let i = 0; i < lista.length; i++){
-        let input = lista[i];
-        if(input.value.trim() == ""){
+function verificar_inputs(formulario){
+    lista_inputs = formulario.querySelectorAll("input");
+    for(let i = 0; i < lista_inputs.length; i++){
+        let input = lista_inputs[i];
+        if(input.value == ""){
             input.style.border = "1px solid #E43A12";
             alert(`Insira um(a) ${input.name}`);
             return;
         }
-        else{
-            input.style.border = "1px solid #D6D3D1";
-        }
-    }
-    console.log("percorreu informações do participante");
-    //percorrer os inputs das informações de endereço
-    let formulario_endereco = conteudo_pai.querySelector(".formulario_endereco");
-    lista = formulario_endereco.querySelectorAll("input");
-
-    for(let i = 0; i < lista.length; i++){
-        let input = lista[i];
-        if(input.value.trim() == ""){
+        else if(input.maxLength != -1 && input.value.length != input.maxLength){
             input.style.border = "1px solid #E43A12";
             alert(`Insira um(a) ${input.name}`);
-            return;
+            return
         }
         else{
             input.style.border = "1px solid #D6D3D1";
         }
+        if(input.type == "radio"){
+            //se encontrar um input radio, significa que chegou no final
+            break;
+        }
     }
-    console.log("percorreu informações de endereço");
-    //percorrer as opções de trilha
-    let formulario_trilhas = formulario_inscricao.querySelector(".formulario_trilhas");
-    lista = formulario_trilhas.querySelectorAll("input");
-
+    //aqui o algoritmo irá verificar se pelo menos uma trilha selecionada
     let checado = false;
-    for(let i = 0; i < lista.length; i++){
-        if(lista[i].checked){
+    lista_inputs = formulario.querySelectorAll('input[type="radio"]');
+    for(let i = 0; i < lista_inputs.length; i++){
+        if(lista_inputs[i].checked){
             checado = true;
+            break;
         }
     }
     if(!checado){
         alert("Selecione uma trilha!");
         return;
     }
-    console.log("percorreu opções da trilha");
-    alert("Sua inscrição foi feita com sucesso!");
+    if(formulario.querySelector("#sexo").value == "Selecionar"){
+        alert("Insira um(a) gênero!");
+        return;
+    }
+    //caso os inputs estejam preenchidos o algoritmo irá salvar os dados
+    console.log("inscrição feita com sucesso!");
 }
 //resetando todos os inputs
-
 document.querySelector("#butao_cancelar").addEventListener("click", function(event){
     let lista_inputs = formulario_inscricao.querySelectorAll("input");
 
