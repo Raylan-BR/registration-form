@@ -1,5 +1,26 @@
+const formulario_inscricao = document.querySelector(".formulario_inscricao");
+
+var dados;
+var nome_usuario;
+
+function carregar_usuario_logado(){
+    for(var i = 0; i < localStorage.length; i++){
+        let nome = localStorage.key(i);
+        let acesso_permitido = JSON.parse(localStorage.getItem(nome)).acesso;
+
+        if(acesso_permitido == 1){
+            nome_usuario = nome;
+            dados = JSON.parse(localStorage.getItem(nome));
+        }
+    }
+    console.log(`login: ${nome_usuario} // `, dados);
+}
+carregar_usuario_logado();
+
 //Essa função faz o logout
 function ir_tela_login(){
+    dados.acesso = 0;
+    localStorage.setItem(nome_usuario, JSON.stringify(dados));
     window.location.href = "login.html";
 }
 //validação do nome
@@ -71,8 +92,6 @@ document.querySelector("#entrada_telefone").addEventListener("input",function(ev
 });
 //validação ao anexar a identidade
 
-/*Nessa função é possivel controlar o fluxo de funcionamento 
-dos inputs files atraves do id e do parágrafo para confirmação*/
 //fizemos essa função, pois usaremos ela novamente para o anexo do comprovante de residencia
 function validar_anexo(identificador, texto_visual){
     document.querySelector(`#${identificador}`).addEventListener("change", function(event){
@@ -143,19 +162,18 @@ document.querySelector("#butao_finalizar").addEventListener("mouseenter",functio
 });
 
 //validando todos os inputs antes de finalizar o formulário
-const formulario_inscricao = document.querySelector(".formulario_inscricao");
-
 document.querySelector("#butao_finalizar").addEventListener("click", function(event){
     if(confirmar_termos.checked){
-        verificar_inputs(formulario_inscricao);
+        verificar_inputs();
     } else{
         console.log("aceite os termos!");
     }
 });
-function verificar_inputs(formulario){
-    lista_inputs = formulario.querySelectorAll("input");
-    for(let i = 0; i < lista_inputs.length; i++){
-        let input = lista_inputs[i];
+function verificar_inputs(){
+    //verificando todos os campos de texto
+    var input_text = formulario_inscricao.querySelectorAll('input[type="text"]');
+    for(let i = 0; i < input_text.length; i++){
+        let input = input_text[i];
         if(input.value == ""){
             input.style.border = "1px solid #E43A12";
             alert(`Insira um(a) ${input.name}`);
@@ -169,16 +187,21 @@ function verificar_inputs(formulario){
         else{
             input.style.border = "1px solid #D6D3D1";
         }
-        if(input.type == "radio"){
-            //se encontrar um input radio, significa que chegou no final
-            break;
+    }
+    //verificando os campos de arquivo
+    var input_file = formulario_inscricao.querySelectorAll('input[type="file"]');
+    for(let i = 0; i < input_file.length; i++){
+        if(input_file[i].files.length == 0){
+            alert(`Insira um(a) ${input_file[i].name}`);
+            return;
         }
     }
-    //aqui o algoritmo irá verificar se pelo menos uma trilha selecionada
+    //verificar a opção de trilha selecionada
     let checado = false;
-    lista_inputs = formulario.querySelectorAll('input[type="radio"]');
-    for(let i = 0; i < lista_inputs.length; i++){
-        if(lista_inputs[i].checked){
+    var opcao_trilha = formulario_inscricao.querySelectorAll('input[type="radio"]');
+    for(let i = 0; i < opcao_trilha.length; i++){
+        if(opcao_trilha[i].checked){
+            dados.trilha = opcao_trilha[i].value;
             checado = true;
             break;
         }
@@ -187,12 +210,18 @@ function verificar_inputs(formulario){
         alert("Selecione uma trilha!");
         return;
     }
-    if(formulario.querySelector("#sexo").value == "Selecionar"){
+    //verificar seleção do gênero
+    let genero = formulario_inscricao.querySelector("#sexo").value;
+    if(genero == "Selecionar"){
         alert("Insira um(a) gênero!");
         return;
     }
+    else{
+        dados.genero = genero;
+    }
     //caso os inputs estejam preenchidos o algoritmo irá salvar os dados
-    console.log("inscrição feita com sucesso!");
+    salvar_dados();
+    alert("Inscrição feita com sucesso! (os dados podem ser alterados)");
 }
 //resetando todos os inputs
 document.querySelector("#butao_cancelar").addEventListener("click", function(event){
@@ -204,4 +233,45 @@ document.querySelector("#butao_cancelar").addEventListener("click", function(eve
             input.checked = false;
         }
     });
+    formulario_inscricao.querySelector("#sexo").value = "Selecionar";
 });
+
+function salvar_dados(){
+    var input_text = formulario_inscricao.querySelectorAll('input[type="text"]');
+    let i = 0;
+    for(let chave in dados){
+        if(chave == "senha") break;
+        console.log(`${dados[chave]} recebe ${input_text[i].value}`);
+        dados[chave] = input_text[i].value;
+        i++;
+    }
+    localStorage.setItem(nome_usuario, JSON.stringify(dados));
+    console.log("dados salvos no localStorage!");
+}
+function carregar_dados(){
+    //carregar as informações dos inputs de texto
+    var input_text = formulario_inscricao.querySelectorAll('input[type="text"]');
+    let i = 0;
+    if(dados.nome != ""){
+        for(let chave in dados){
+            if(chave == "senha") break;
+            input_text[i].value = dados[chave];
+            i++;
+        }
+    }
+    else{
+        alert("Notamos que você não tem dados salvos!");
+    }
+    //carregar a seleção de gênero do usuario
+    formulario_inscricao.querySelector("#sexo").value = dados.genero;
+
+    //carregar a opção de trilha do usuario
+    var opcao_trilha = formulario_inscricao.querySelectorAll('input[type="radio"]');
+    for(let i = 0; i < opcao_trilha.length; i++){
+        if(opcao_trilha[i].value == dados.trilha){
+            opcao_trilha[i].checked = true;
+            break;
+        }
+    }
+}
+carregar_dados();

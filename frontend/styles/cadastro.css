@@ -28,7 +28,7 @@ body{
 .tela_cadastro h1{
     color: #292524;
     font-size: 20pt;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 .tela_cadastro p{
     width: 80%;
@@ -79,7 +79,6 @@ body{
     color: white;
     font-weight: 500;
     margin-right: 2rem;
-    margin-top: 3rem;
 }
 footer{
     margin-top: 2rem;

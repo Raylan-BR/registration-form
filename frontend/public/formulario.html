@@ -62,7 +62,7 @@
                 </div>
                 <div>
                     <p>E-mail</p>
-                    <input name="email" type="email" id="entrada_email" placeholder="exemplo@gmail.com">
+                    <input name="email" type="text" id="entrada_email" placeholder="exemplo@gmail.com">
                     <div id="validar_email">
                         <!--Esse icone não encontramos no figma e usamos o icone do heroicons-->
                         <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -73,7 +73,7 @@
                 </div>
                 <div>
                     <p>Telefone</p>
-                    <input name="telefone" type="tel" id="entrada_telefone" maxlength="16" placeholder="(00) 0 0000-0000">
+                    <input name="telefone" type="text" id="entrada_telefone" maxlength="16" placeholder="(00) 0 0000-0000">
                     <div id="validar_telefone">
                         <!--Esse icone não encontramos no figma e usamos o icone do heroicons-->
                         <svg width = "20px" color = "#DC2626" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -142,7 +142,7 @@
                 <p>Selecione apenas uma trilha</p>
                 <div class="opcao_trilha">
                     <!-- Programação Front-end -->
-                    <input type="radio" id="front_end" name="trilha">
+                    <input type="radio" id="front_end" name="trilha" value="Programação Front-end">
                     <label for="front_end" class="trilha">
                         <div id="checkbox_trilha">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -156,7 +156,7 @@
                     </label>
 
                     <!-- Programação Back-end -->
-                    <input type="radio" id="back_end" name="trilha">
+                    <input type="radio" id="back_end" name="trilha" value="Programação Back-end">
                     <label for="back_end" class="trilha">
                         <div id="checkbox_trilha">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -170,7 +170,7 @@
                     </label>
 
                     <!-- Programação de Jogos -->
-                    <input type="radio" id="jogos" name="trilha">
+                    <input type="radio" id="jogos" name="trilha" value="Programação de Jogos">
                     <label for="jogos" class="trilha">
                         <div id="checkbox_trilha">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -184,7 +184,7 @@
                     </label>
 
                     <!-- Design e Experiência -->
-                    <input type="radio" id="deisgn_experiencia" name="trilha">
+                    <input type="radio" id="deisgn_experiencia" name="trilha" value="Design e Experiência">
                     <label for="deisgn_experiencia" class="trilha">
                         <div id="checkbox_trilha">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -198,7 +198,7 @@
                     </label>
 
                     <!-- Ciência de Dados -->
-                    <input type="radio" id="ciencia_dados" name="trilha">
+                    <input type="radio" id="ciencia_dados" name="trilha" value="Ciência de Dados">
                     <label for="ciencia_dados" class="trilha">
                         <div id="checkbox_trilha">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -226,6 +226,7 @@
             <div class="formulario_finalizar">
                 <button id="butao_cancelar">Limpar</button>
                 <button id="butao_finalizar">Fazer inscrição</button>
+                <!--<button onclick="carregar_dados()">carregar</button>-->
             </div>
         </div>
     </section>
