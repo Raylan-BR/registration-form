@@ -31,7 +31,7 @@ function ir_tela_login(){
                 else{
                     dados.senha = senha;
                     localStorage.setItem(nome, JSON.stringify(dados));
-                    window.location.href = "../public/index.html";
+                    window.location.href = "index.html";
                 }
             }
         }
