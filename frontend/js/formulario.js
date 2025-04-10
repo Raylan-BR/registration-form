@@ -21,7 +21,7 @@ carregar_usuario_logado();
 function ir_tela_login(){
     dados.acesso = 0;
     localStorage.setItem(nome_usuario, JSON.stringify(dados));
-    window.location.href = "login.html";
+    window.location.href = "../public/index.html";
 }
 //validação do nome
 //auto formatação do nome completo
